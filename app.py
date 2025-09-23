@@ -238,7 +238,7 @@ def prepare_dataframe(df):
 
 # 5️⃣ Match score
 def calculate_match_score(user_data, row):
-    if user_data['normalized'] and user_data['normalized'] in row['all_normalized_forms']:
+    if user_data['normalized'] == row['normalized_english']:
         return 100.0, "Exact Match"
 
     roman_full_w = fuzz.WRatio(user_data['normalized'], row['normalized_english'])
@@ -397,6 +397,7 @@ if user_name:
 
     st.subheader("Top Matches")
     st.dataframe(results_df)
+
 
 
 

@@ -1,0 +1,101 @@
+﻿person_id,name_english,name_hindi,alias_names,father_husband,age,address,case_type,fir_date,status,gender
+1,Sunil Kant,सुनील कांत,Sun,Stuvan Kant,39,Kamarhati,Cyber Crime,4/4/2025,Closed,male
+2,kaustubh Mani,अनिल मणि,Ani,Aarav Mani,28,South Dumdum,Assault,6/26/2025,Closed,male
+3,Deepak Bains,दीपक बैन्स,Dee,Jayan Bains,34,Dindigul,Assault,5/7/2025,Open,male
+4,Kunal Bala,कुनाल बाला,Kun,Saira Bala,24,Alwar,Theft,6/21/2025,Open,male
+5,Rahul Johal,राहुल जौहल,Rah,Anya Johal,31,Bhimavaram,Robbery,7/13/2025,Open,male
+6,Vivek Raman,विवेक रामन,Viv,Lagan Raman,53,Morbi,Robbery,4/10/2025,Open,male
+7,Suresh Chandra,सुरेश चन्द्र,Sur,Rati Chandra,20,Rajahmundry,Fraud,5/12/2025,Open,male
+8,Ravi Kala,रवि काला,Rav,Amira Kala,34,Loni,Assault,7/13/2025,Open,male
+9,Manoj Goyal,मनोज गोयल,Man,Khushi Goyal,44,Kolkata,Assault,4/25/2025,Closed,male
+10,krish Char,अमित चार,Ami,Ishaan Char,30,Varanasi,Theft,8/28/2025,Open,male
+11,Sanjay Chad,संजय चड,San,Zara Chad,41,Danapur,Robbery,8/12/2025,Open,male
+12,Rajesh Choudhary,राजेश चौधरी,Raj,Mehul Choudhary,48,Indore,Cyber Crime,4/28/2025,Closed,male
+13,Ramesh Sibal,रमेश सिबल,Ram,Madhav Sibal,43,Mehsana,Assault,5/17/2025,Open,male
+14,Sunil Dhillon,सुनील ढिल्लों,Sun,Taimur Dhillon,55,Lucknow,Robbery,8/19/2025,Open,male
+15,Vikas Sawhney,विकास सॉनी,Vik,Shalv Sawhney,23,Malda,Robbery,8/31/2025,Open,male
+16,Arjun Bala,अर्जुन बाला,Arj,Bhamini Bala,42,Chinsurah,Assault,7/26/2025,Open,male
+17,Manoj Mander,मनोज मान्डर,Man,Zoya Mander,54,Ahmednagar,Theft,4/21/2025,Open,male
+18,Rajesh Soni,राजेश सोनी,Raj,Rohan Soni,55,Katihar,Theft,9/13/2025,Closed,male
+19,Arjun Thaker,अर्जुन ठाकेर,Arj,Nirvaan Thaker,48,Gwalior,Theft,9/17/2025,Open,male
+20,Ashok Chandran,अशोक चन्द्रन,Ash,Samaira Chandran,27,Pallavaram,Fraud,5/12/2025,Closed,male
+21,Anil Sem,अनिल सेम,Ani,Umang Sem,30,Dindigul,Assault,4/21/2025,Closed,male
+22,Rahul Sheth,राहुल शेट,Rah,Amani Sheth,45,Tenali,Robbery,4/14/2025,Open,male
+23,Rohit Wagle,रोहित वागले,Roh,Tarini Wagle,55,Sri Ganganagar,Cyber Crime,4/18/2025,Closed,male
+24,Nitin Setty,नितिन सेठी,Nit,Damini Setty,49,Bokaro,Theft,5/21/2025,Closed,male
+25,Nitin Dhar,नितिन धर,Nit,Romil Dhar,23,Khammam,Assault,8/25/2025,Open,male
+26,Suresh Gulati,सुरेश गुलाटी,Sur,Ehsaan Gulati,32,Satna,Robbery,7/17/2025,Closed,male
+27,Ramesh Dayal,रमेश दयाल,Ram,Tara Dayal,24,Imphal,Theft,5/1/2025,Open,male
+28,Sunil Kade,सुनील काडे,Sun,Badal Kade,43,Kanpur,Robbery,4/28/2025,Open,male
+29,Ravi Bhattacharyya,रवि भट्टाचार्य,Rav,Adah Bhattacharyya,52,Jehanabad,Assault,4/1/2025,Closed,male
+30,Vivek Grewal,विवेक ग्रेवाल,Viv,Prerak Grewal,22,Dewas,Theft,9/15/2025,Open,male
+31,Kunal Bhatt,कुनाल भट्ट,Kun,Stuvan Bhatt,51,Noida,Assault,6/30/2025,Closed,male
+32,Sanjay Raval,संजय रावल,San,Shalv Raval,58,Karimnagar,Theft,9/15/2025,Closed,male
+33,Rohit Sampath,रोहित सम्पथ,Roh,Hridaan Sampath,59,Bhagalpur,Fraud,6/21/2025,Open,male
+34,Sanjay Soman,संजय सोमन,San,Aniruddh Soman,21,Jalna,Cyber Crime,8/26/2025,Closed,male
+35,Kunal Zachariah,कुनाल ज़कारिया,Kun,Neelofar Zachariah,37,Tinsukia,Fraud,9/16/2025,Open,male
+36,Amit Taneja,अमित तनेजा,Ami,Rania Taneja,53,Rourkela,Cyber Crime,8/20/2025,Open,male
+37,Manoj Hari,मनोज हरी,Man,Vaibhav Hari,38,Bongaigaon,Assault,6/11/2025,Closed,male
+38,Rajesh Tak,राजेश टक,Raj,Nitara Tak,58,Haldia,Fraud,5/2/2025,Closed,male
+39,ritik jain,अशोक सुरेश,Ash,Kismat Suresh,58,Anantapur,Cyber Crime,6/2/2025,Open,male
+40,Manoj Kadakia,मनोज कडाकिया,Man,Jivin Kadakia,41,Ramagundam,Fraud,3/28/2025,Closed,male
+41,Vikas Vohra,विकास वोहरा,Vik,Kartik Vohra,42,Miryalaguda,Fraud,5/14/2025,Open,male
+42,Sanjay Kalita,संजय कलिता,San,Kiara Kalita,52,Tezpur,Fraud,4/4/2025,Open,male
+43,Suresh Sandhu,सुरेश संधू,Sur,Vardaniya Sandhu,57,Ambarnath,Fraud,7/3/2025,Open,male
+44,Ramesh Ganguly,रमेश गांगुली,Ram,Siya Ganguly,28,Fatehpur,Fraud,8/15/2025,Closed,male
+45,Manoj Mahal,मनोज महल,Man,Devansh Mahal,47,Dharmavaram,Assault,7/9/2025,Closed,male
+46,Ramesh Chopra,रमेश चोपड़ा,Ram,Dhanush Chopra,33,Warangal,Assault,3/31/2025,Closed,male
+47,Suresh Bumb,सुरेश बम्ब,Sur,Indrans Bumb,20,Bettiah,Assault,9/15/2025,Closed,male
+48,Anil Sarkar,अनिल सरकार,Ani,Amira Sarkar,49,Rourkela,Cyber Crime,7/17/2025,Open,male
+49,Rohit Gade,रोहित गाडे,Roh,Prisha Gade,43,Kolhapur,Fraud,6/8/2025,Closed,male
+50,Deepak Gill,दीपक गिल,Dee,Lagan Gill,55,Burhanpur,Theft,7/7/2025,Closed,male
+51,Kunal Koshy,कुनाल कोशि,Kun,Manjari Koshy,40,Rampur,Robbery,4/1/2025,Open,male
+52,Amit Rajan,अमित राजन,Ami,Arhaan Rajan,55,Rajahmundry,Cyber Crime,7/22/2025,Closed,male
+53,Pradeep Lalla,प्रदीप लाल्ला,Pra,Vidur Lalla,59,Raurkela Industrial Township,Assault,8/24/2025,Open,male
+54,Rahul Iyer,राहुल अय्यर,Rah,Jayesh Iyer,55,Bhopal,Assault,7/21/2025,Open,male
+55,Arjun Joshi,अर्जुन जोशी,Arj,Jivin Joshi,27,Mahbubnagar,Robbery,4/12/2025,Closed,male
+56,Rahul Ganesh,राहुल गणेश,Rah,Yuvraj  Ganesh,44,Jaipur,Assault,6/14/2025,Open,male
+57,Ramesh Iyengar,रमेश अय्यंगर,Ram,Anahita Iyengar,30,Bhiwani,Fraud,5/14/2025,Open,male
+58,Vivek Sani,विवेक सानी,Viv,Armaan Sani,40,Surat,Cyber Crime,7/16/2025,Closed,male
+59,Pradeep Kaul,प्रदीप कौल,Pra,Ritvik Kaul,39,Jalandhar,Robbery,5/9/2025,Closed,male
+60,Rahul Singh,राहुल सिंह,Rah,Myra Singh,30,Muzaffarnagar,Cyber Crime,8/20/2025,Closed,male
+61,Vikas Zacharia,विकास ज़कारिया,Vik,Amira Zacharia,33,Tezpur,Theft,3/31/2025,Open,male
+62,Rahul Yogi,राहुल योगी,Rah,Stuvan Yogi,23,Bongaigaon,Robbery,6/14/2025,Open,male
+63,Deepak Kumer,दीपक कुमार,Dee,Diya Kumer,45,Aurangabad,Theft,4/25/2025,Closed,male
+64,Ravi Gade,रवि गाडे,Rav,Devansh Gade,25,Ongole,Fraud,6/21/2025,Open,male
+65,Suresh Dyal,सुरेश दयाल,Sur,Madhup Dyal,37,Phusro,Assault,9/12/2025,Closed,male
+66,Kunal Vaidya,कुनाल वैद्य,Kun,Kavya Vaidya,38,Solapur,Fraud,9/6/2025,Closed,male
+67,Manoj Chadha,मनोज चड्ढा,Man,Keya Chadha,40,Tadipatri,Assault,5/4/2025,Open,male
+68,Deepak Goswami,दीपक गोस्वामी,Dee,Pihu Goswami,49,Nangloi Jat,Cyber Crime,7/11/2025,Open,male
+69,Rohit Bhargava,रोहित भार्गव,Roh,Shamik Bhargava,25,Thane,Fraud,7/15/2025,Closed,male
+70,Anil Sharma,अनिल शर्मा,Ani,Darshit Sharma,46,Gwalior,Theft,7/10/2025,Open,male
+71,Amit Garg,अमित गर्ग,Ami,Anya Garg,54,Bharatpur,Cyber Crime,9/3/2025,Open,male
+72,Rajesh Bhatt,राजेश भट्ट,Raj,Nitara Bhatt,50,Rampur,Assault,6/4/2025,Closed,male
+73,Anil Srinivas,अनिल श्रीनिवास,Ani,Devansh Srinivas,56,Munger,Assault,9/7/2025,Open,male
+74,Ramesh Thakkar,रमेश ठक्कर,Ram,Divit Thakkar,38,Ranchi,Assault,4/5/2025,Open,male
+75,Kunal Sehgal,कुनाल सहगल,Kun,Kimaya Sehgal,31,Kamarhati,Assault,8/23/2025,Open,male
+76,Ashok Ratta,अशोक रत्ता,Ash,Zaina Ratta,52,Siliguri,Fraud,5/19/2025,Closed,male
+77,Anil Bassi,अनिल बसी,Ani,Jhanvi Bassi,27,Bhind,Theft,8/11/2025,Open,male
+78,Kunal Vala,कुनाल वाला,Kun,Vritika Vala,34,Katihar,Cyber Crime,5/29/2025,Open,male
+79,Rohit Rana,रोहित राणा,Roh,Akarsh Rana,52,Aizawl,Robbery,9/8/2025,Open,male
+80,Ashok Ramaswamy,अशोक रामास्वामी,Ash,Arnav Ramaswamy,42,Kozhikode,Theft,9/10/2025,Open,male
+81,Vivek Soni,विवेक सोनी,Viv,Hunar Soni,40,Naihati,Fraud,6/6/2025,Closed,male
+82,Suresh Sachar,सुरेश साचार,Sur,Hansh Sachar,31,Tinsukia,Robbery,6/7/2025,Closed,male
+83,Vikas Baral,विकास बराल,Vik,Vivaan Baral,27,Raurkela Industrial Township,Fraud,5/29/2025,Open,male
+84,Deepak Manne,दीपक मन्ने,Dee,Siya Manne,57,Nangloi Jat,Fraud,4/27/2025,Open,male
+85,Amit Lata,अमित लता,Ami,Saanvi Lata,46,Belgaum,Theft,7/12/2025,Open,male
+86,Vivek Zacharia,विवेक ज़कारिया,Viv,Mehul Zacharia,40,Thanjavur,Assault,4/2/2025,Open,male
+87,Ramesh Kurian,रमेश कुरियन,Ram,Samar Kurian,51,Bettiah,Fraud,9/11/2025,Open,male
+88,Deepak Mahajan,दीपक महाजन,Dee,Vardaniya Mahajan,53,Ahmednagar,Assault,3/26/2025,Open,male
+89,Anil Warrior,अनिल वारियर,Ani,Zara Warrior,24,Thrissur,Theft,7/12/2025,Open,male
+90,Vivek Issac,विवेक इसाक,Viv,Saanvi Issac,53,Guntur,Theft,5/17/2025,Closed,male
+91,Deepak Saraf,दीपक साराफ,Dee,Dishani Saraf,38,Karawal Nagar,Assault,7/15/2025,Closed,male
+92,Vikas Basu,विकास बसु,Vik,Jivin Basu,53,Ambarnath,Cyber Crime,5/31/2025,Open,male
+93,Rajesh Choudhury,राजेश चौधुरी,Raj,Krish Choudhury,27,Surendranagar Dudhrej,Robbery,5/2/2025,Closed,male
+94,Ramesh Suri,रमेश सूरी,Ram,Sumer Suri,27,Jehanabad,Fraud,7/4/2025,Open,male
+95,Kunal Chander,कुनाल चंदर,Kun,Renee Chander,36,Udupi,Assault,8/18/2025,Open,male
+96,Manoj Sathe,मनोज साठे,Man,Amira Sathe,36,Barasat,Fraud,4/23/2025,Open,male
+97,Sanjay Master,संजय मास्टर,San,Rohan Master,39,Ajmer,Assault,8/23/2025,Closed,male
+98,Suresh Barad,सुरेश बारड़,Sur,Hunar Barad,30,Naihati,Cyber Crime,4/1/2025,Closed,male
+99,Vivek Balan,विवेक बालन,Viv,Kismat Balan,24,Uluberia,Theft,6/21/2025,Open,male
+100,Sunil Hayer,सुनील हायर,Sun,Aradhya Hayer,25,Bangalore,Theft,7/29/2025,Open,male

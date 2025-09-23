@@ -1,0 +1,52 @@
+﻿person_id,name_english,name_hindi,alias_names,father_husband,age,address,case_type,fir_date,status,
+1,Sunita Sharma,सुनीता शर्मा,"Suneeta, Sunitha",Ramesh Sharma,29,Delhi,Missing Complaint,10/9/2025,Under Investigation,
+2,Suneeta Sharma,सुनीता शरमा,"Sunita, Sunitha",Ramesh Sharma,30,Delhi,Missing Complaint,11/9/2025,Under Investigation,
+3,Anjali Verma,अंजलि वर्मा,"Anjalee, Anjale",Mohan Verma,24,Lucknow,Fraud,15-08-2025,Pending,
+4,Anjalee Verma,अंजली वर्मा,"Anjali, Anjale",Mohan Verma,24,Lucknow,Fraud,15-08-2025,Pending,
+5,Rekha Devi,रेखा देवी,"Rekhaa, Reka",Shyam Prasad,35,Patna,Robbery,21-07-2025,Closed,
+6,Rekhaa Devi,रेखा देवी,"Rekha, Reka",Shyam Prasad,35,Patna,Robbery,21-07-2025,Closed,
+7,Meena Kumari,मीना कुमारी,"Mina, Meenakumari",Lalit Kumar,27,Jaipur,Murder,12/6/2025,Under Investigation,
+8,Mina Kumari,मीना कुमारी,"Meena, Meenakumari",Lalit Kumar,27,Jaipur,Murder,12/6/2025,Under Investigation,
+9,Pooja Mishra,पुजा मिश्रा,"Puja, Poojaa",Hari Mishra,22,Bhopal,Missing Complaint,18-09-2025,Pending,
+10,Puja Mishra,पूजा मिश्रा,"Pooja, Poojaa",Hari Mishra,22,Bhopal,Missing Complaint,18-09-2025,Pending,
+11,Puja Mishra,पुजा मिश्रा,"Pooja, Poojaa",Hari Mishra,22,Bhopal,Missing Complaint,18-09-2025,Pending,
+11,Priya Hayer,प्रिया हैयर,Pri,Shray Hayer,33,Avadi,Theft,8/5/2025,Open,female
+12,Shweta Ben,श्वेता बेन,Shw,Hrishita Ben,57,Tinsukia,Fraud,5/13/2025,Open,female
+13,Sonal Virk,सोनल विरक,Son,Nakul Virk,52,Ambattur,Cyber Crime,7/1/2025,Closed,female
+14,Kiran Kala,किरण कला,Kir,Hrishita Kala,47,Pimpri-Chinchwad,Robbery,4/26/2025,Open,female
+15,Sneha Chander,स्नेहा चंदर,Sne,Gokul Chander,56,Kanpur,Cyber Crime,8/17/2025,Closed,female
+16,Anita Saran,अनीता सारन,Ani,Anahita Saran,41,Bhiwandi,Robbery,9/9/2025,Open,female
+17,Neha Taneja,नेहा तनेजा,Neh,Chirag Taneja,22,Chapra,Fraud,6/2/2025,Open,female
+18,Neha Bumb,नेहा बंब,Neh,Vihaan Bumb,60,Orai,Cyber Crime,7/7/2025,Closed,female
+19,Priya Dada,प्रिया दादा,Pri,Raghav Dada,49,Bally,Robbery,8/5/2025,Open,female
+20,Kavita Goyal,कविता गोयल,Kav,Kartik Goyal,20,Bally,Fraud,5/20/2025,Closed,female
+21,Ritika Ahluwalia,रितिका आहलूवालिया,Rit,Urvi Ahluwalia,22,Saharsa,Cyber Crime,6/17/2025,Open,female
+22,Payal Raja,पायल राजा,Pay,Suhana Raja,33,Tumkur,Cyber Crime,6/2/2025,Open,female
+23,Neha Bhattacharyya,नेहा भट्टाचार्य,Neh,Pihu Bhattacharyya,51,Mehsana,Fraud,8/14/2025,Open,female
+24,Preeti Sankar,प्रीति शंकर,Pre,Urvi Sankar,29,Rourkela,Robbery,8/15/2025,Open,female
+25,Neha Saini,नेहा सैनी,Neh,Ojas Saini,54,Raiganj,Fraud,8/22/2025,Open,female
+26,Divya Madan,दिव्या मदान,Div,Gatik Madan,25,Alappuzha,Theft,9/9/2025,Open,female
+27,Ritika Arya,रितिका आर्य,Rit,Aarav Arya,52,Karnal,Cyber Crime,6/14/2025,Closed,female
+28,Shweta Sinha,श्वेता सिन्हा,Shw,Tanya Sinha,25,Chennai,Theft,6/30/2025,Closed,female
+29,Meena Soman,मीना सोमन,Mee,Jivin Soman,59,Ajmer,Assault,7/12/2025,Closed,female
+30,Kavita Vohra,कविता वोहरा,Kav,Chirag Vohra,31,Chandigarh,Robbery,9/13/2025,Closed,female
+31,Sneha Rajagopal,स्नेहा राजगोपाल,Sne,Taimur Rajagopal,30,Etawah,Theft,6/25/2025,Open,female
+32,Aarti Baral,आरती बराल,Aar,Veer Baral,50,Panipat,Cyber Crime,6/26/2025,Closed,female
+33,Ritika Shanker,रितिका शंकर,Rit,Raunak Shanker,35,Hapur,Robbery,8/4/2025,Closed,female
+34,Sneha Chad,स्नेहा चड,Sne,Zaina Chad,53,Barasat,Assault,4/8/2025,Open,female
+35,Ritika Ganesh,रितिका गणेश,Rit,Tarini Ganesh,26,Barasat,Robbery,4/27/2025,Closed,female
+36,Aarti Buch,आरती बुख,Aar,Madhup Buch,28,Patiala,Robbery,5/18/2025,Closed,female
+37,Aarti Balan,आरती बालन,Aar,Rohan Balan,48,Dhule,Theft,6/23/2025,Open,female
+38,Jyoti Sule,ज्योति सुले,Jyo,Siya Sule,21,Bongaigaon,Assault,5/14/2025,Open,female
+39,Jyoti Dhaliwal,ज्योति ढालीवाल,Jyo,Mohanlal Dhaliwal,40,Bijapur,Robbery,4/13/2025,Open,female
+40,Nisha Choudhury,निशा चौधरी,Nis,Raunak Choudhury,31,Jalna,Robbery,4/16/2025,Open,female
+41,Swati Vyas,स्वाति व्यास,Swa,Anahi Vyas,38,Nizamabad,Robbery,8/23/2025,Open,female
+42,Anita Varma,अनीता वर्मा,Ani,Alisha Varma,29,Ambattur,Cyber Crime,5/12/2025,Open,female
+43,Kiran Mandal,किरण मंडल,Kir,Ira Mandal,50,Bhubaneswar,Assault,4/16/2025,Closed,female
+44,Shweta Dalal,श्वेता दलाल,Shw,Charvi Dalal,36,Guntur,Cyber Crime,6/2/2025,Open,female
+45,Lata Gill,लता गिल,Lat,Riaan Gill,49,Raebareli,Robbery,5/30/2025,Open,female
+46,Kavita De,कविता डे,Kav,Prisha De,45,Danapur,Assault,5/4/2025,Closed,female
+47,Payal Ben,पायल बेन,Pay,Kartik Ben,26,Ghaziabad,Robbery,4/16/2025,Open,female
+48,Ritika Bedi,रितिका बेदी,Rit,Ojas Bedi,29,Bhiwani,Fraud,6/27/2025,Open,female
+49,Anita Ramakrishnan,अनीता रामकृष्णन,Ani,Shlok Ramakrishnan,37,Alappuzha,Assault,4/20/2025,Open,female
+50,Kiran Gaba,किरण गाबा,Kir,Rhea Gaba,31,Aizawl,Cyber Crime,6/2/2025,Closed,female

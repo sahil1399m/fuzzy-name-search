@@ -314,38 +314,38 @@ def search_database(user_input, df, min_score=60, top_n=3, allow_fallback=False)
     return matches
 
 
-# ------------------- STREAMLIT UI -------------------
+# ------------------- STREAMLIT PRO UI -------------------
 import streamlit as st
+import pandas as pd
 
-# Dark/Light Mode Toggle
-mode = st.sidebar.radio("Theme Mode", ["Dark", "Light"])
+# ========== PAGE CONFIG ==========
+st.set_page_config(
+    page_title="Fuzzy Name Search | Police Database",
+    page_icon="🔍",
+    layout="wide"
+)
 
-# Apply CSS based on mode
+# ========== THEME TOGGLE ==========
+mode = st.sidebar.radio("🌗 Theme Mode", ["Dark", "Light"])
+
 if mode == "Dark":
     st.markdown(
         """
         <style>
-        /* General background & text */
-        .stApp, .stTextInput, .stButton, .stRadio, .stSlider {
-            background-color: #121212;
-            color: #f5f5f5;
+        /* Dark Theme */
+        .stApp {background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);}
+        .stTextInput>div>div>input, .stTextArea textarea {
+            background-color:#1e1e1e; color:#f5f5f5; border:1px solid #444;
+            border-radius:10px; padding:8px;
         }
-        .stDataFrame div.row_widget {
-            background-color: #1e1e1e;
-            color: #f5f5f5;
+        .stButton>button {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color:white; border:none; border-radius:10px;
+            padding:10px 20px; font-weight:bold; transition:0.3s;
         }
-        /* Headers */
-        .st-h1, .st-h2, .st-h3 {
-            color: #f5f5f5;
-        }
-        /* Table styling */
-        .dataframe tbody tr:nth-child(even) {background-color: #1e1e1e;}
-        .dataframe tbody tr:nth-child(odd) {background-color: #222222;}
-        .dataframe thead {background-color: #333333; color: #ffffff;}
-        /* Input boxes */
-        .stTextInput>div>div>input {background-color:#1e1e1e; color:#f5f5f5; border:1px solid #444;}
-        /* Buttons */
-        .stButton>button {background-color:#333; color:#f5f5f5; border-radius:8px; padding:5px 12px;}
+        .stButton>button:hover {transform: scale(1.05); box-shadow:0 0 10px #2575fc;}
+        .stRadio>div, .stSlider {color:#f5f5f5;}
+        .stDataFrame {background-color:#121212; border-radius:12px; padding:10px;}
         </style>
         """, unsafe_allow_html=True
     )
@@ -353,36 +353,60 @@ else:
     st.markdown(
         """
         <style>
-        /* Light theme resets default colors */
-        .stApp, .stTextInput, .stButton, .stRadio, .stSlider {background-color: #f0f0f0; color: #000000;}
-        .stDataFrame div.row_widget {background-color: #ffffff; color: #000000;}
-        .dataframe tbody tr:nth-child(even) {background-color: #f9f9f9;}
-        .dataframe tbody tr:nth-child(odd) {background-color: #ffffff;}
-        .dataframe thead {background-color: #d9d9d9; color: #000000;}
-        .stTextInput>div>div>input {background-color:#ffffff; color:#000; border:1px solid #ccc;}
-        .stButton>button {background-color:#ddd; color:#000; border-radius:8px; padding:5px 12px;}
+        /* Light Theme */
+        .stApp {background: linear-gradient(135deg, #fdfbfb, #ebedee);}
+        .stTextInput>div>div>input, .stTextArea textarea {
+            background-color:#ffffff; color:#000; border:1px solid #ccc;
+            border-radius:10px; padding:8px;
+        }
+        .stButton>button {
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            color:white; border:none; border-radius:10px;
+            padding:10px 20px; font-weight:bold; transition:0.3s;
+        }
+        .stButton>button:hover {transform: scale(1.05); box-shadow:0 0 10px #0072ff;}
+        .stRadio>div, .stSlider {color:#000;}
+        .stDataFrame {background-color:#fff; border-radius:12px; padding:10px;}
         </style>
         """, unsafe_allow_html=True
     )
 
-# Now keep your original title and inputs
-st.title("🔍 Gender Aware Police Fuzzy Name Search Demo")
+# ========== HEADER ==========
+st.markdown(
+    """
+    <h1 style='text-align:center; color:#2575fc; font-size:40px;'>
+        🔍 Gender-Aware Police Fuzzy Name Search
+    </h1>
+    <p style='text-align:center; font-size:18px; color:gray;'>
+        Secure • Accurate • Scalable
+    </p>
+    <hr>
+    """,
+    unsafe_allow_html=True
+)
 
-# Load CSVs once
+# ========== DATA LOADING ==========
 @st.cache_data
 def load_data():
+    # Add your own preprocessing here
     males_df = prepare_dataframe(pd.read_csv("malesf.csv", encoding='utf-8-sig'))
     females_df = prepare_dataframe(pd.read_csv("fdata.csv", encoding='utf-8-sig'))
     return males_df, females_df
 
 males_df, females_df = load_data()
 
-# Inputs
-user_name = st.text_input("Enter Name:")
-gender = st.radio("Select Gender:", options=['Male','Female',"Don't Know"])
-threshold = st.slider("Minimum Match %", min_value=0, max_value=100, value=60)
+# ========== USER INPUTS ==========
+st.markdown("### 🔧 Search Parameters")
+col1, col2, col3 = st.columns([2, 1, 1])
 
-# Rest of your search logic
+with col1:
+    user_name = st.text_input("Enter Name:", placeholder="e.g., Priya Sharma")
+with col2:
+    gender = st.radio("Select Gender:", options=['Male','Female',"Don't Know"])
+with col3:
+    threshold = st.slider("Match Threshold %", min_value=0, max_value=100, value=60)
+
+# ========== SEARCH LOGIC ==========
 if user_name:
     if gender == "Male":
         results_df = search_database(user_name, males_df.copy(), min_score=threshold, allow_fallback=False)
@@ -393,10 +417,22 @@ if user_name:
         female_results = search_database(user_name, females_df.copy(), min_score=threshold, top_n=5, allow_fallback=False)
         results_df = pd.concat([male_results, female_results])
         results_df = results_df.drop_duplicates(subset=['person_id'])
-        results_df = results_df.sort_values(by='match_score', ascending=False).head(3)
+        results_df = results_df.sort_values(by='match_score', ascending=False).head(5)
 
-    st.subheader("Top Matches")
-    st.dataframe(results_df)
+    # ========== DISPLAY RESULTS ==========
+    st.markdown("### 📊 Top Matches")
+    if not results_df.empty:
+        st.dataframe(
+            results_df.style.background_gradient(cmap="Blues").set_properties(**{
+                'border-radius': '10px',
+                'border': '1px solid #ddd',
+                'padding': '5px'
+            }),
+            use_container_width=True
+        )
+    else:
+        st.warning("⚠️ No matches found. Try lowering the threshold or check spelling.")
+
 
 
 

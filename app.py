@@ -314,11 +314,10 @@ def search_database(user_input, df, min_score=60, top_n=3, allow_fallback=False)
     return matches
 
 
-# ------------------- STREAMLIT PRO UI -------------------
+# ------------------- STREAMLIT PRO UI (Fixed Dark Mode) -------------------
 import streamlit as st
 import pandas as pd
 
-# ========== PAGE CONFIG ==========
 st.set_page_config(
     page_title="Fuzzy Name Search | Police Database",
     page_icon="🔍",
@@ -333,45 +332,75 @@ if mode == "Dark":
         """
         <style>
         /* Dark Theme */
-        .stApp {background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);}
-        .stTextInput>div>div>input, .stTextArea textarea {
-            background-color:#1e1e1e; color:#f5f5f5; border:1px solid #444;
-            border-radius:10px; padding:8px;
+        .stApp {
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #121212);
+            color: #e6e6e6;
         }
+
+        /* Labels, radio, slider text */
+        label, .stRadio, .stSlider, .stSelectbox, .stTextInput label, .stTextArea label {
+            color: #f5f5f5 !important;
+            font-weight: 500;
+        }
+
+        /* Input & text boxes */
+        .stTextInput>div>div>input, .stTextArea textarea {
+            background-color:#1e1e1e;
+            color:#f5f5f5;
+            border:1px solid #444;
+            border-radius:10px;
+            padding:8px;
+        }
+
+        /* Radio buttons */
+        .stRadio>div {
+            background: #1e1e1e;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Sliders */
+        .stSlider>div {
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        /* Buttons */
         .stButton>button {
             background: linear-gradient(45deg, #6a11cb, #2575fc);
-            color:white; border:none; border-radius:10px;
-            padding:10px 20px; font-weight:bold; transition:0.3s;
+            color:white;
+            border:none;
+            border-radius:10px;
+            padding:10px 20px;
+            font-weight:bold;
+            transition:0.3s;
         }
-        .stButton>button:hover {transform: scale(1.05); box-shadow:0 0 10px #2575fc;}
-        .stRadio>div, .stSlider {color:#f5f5f5;}
-        .stDataFrame {background-color:#121212; border-radius:12px; padding:10px;}
+        .stButton>button:hover {
+            transform: scale(1.05);
+            box-shadow:0 0 10px #2575fc;
+        }
+
+        /* DataFrame styling */
+        .stDataFrame {
+            background-color:#1a1a1a;
+            border-radius:12px;
+            padding:10px;
+        }
         </style>
         """, unsafe_allow_html=True
     )
 else:
+    # Light mode unchanged
     st.markdown(
         """
         <style>
-        /* Light Theme */
         .stApp {background: linear-gradient(135deg, #fdfbfb, #ebedee);}
-        .stTextInput>div>div>input, .stTextArea textarea {
-            background-color:#ffffff; color:#000; border:1px solid #ccc;
-            border-radius:10px; padding:8px;
-        }
-        .stButton>button {
-            background: linear-gradient(45deg, #00c6ff, #0072ff);
-            color:white; border:none; border-radius:10px;
-            padding:10px 20px; font-weight:bold; transition:0.3s;
-        }
-        .stButton>button:hover {transform: scale(1.05); box-shadow:0 0 10px #0072ff;}
-        .stRadio>div, .stSlider {color:#000;}
-        .stDataFrame {background-color:#fff; border-radius:12px; padding:10px;}
         </style>
         """, unsafe_allow_html=True
     )
 
-# ========== HEADER ==========
+# HEADER
 st.markdown(
     """
     <h1 style='text-align:center; color:#2575fc; font-size:40px;'>
@@ -385,17 +414,16 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ========== DATA LOADING ==========
+# Dummy Data Loading Example
 @st.cache_data
 def load_data():
-    # Add your own preprocessing here
     males_df = prepare_dataframe(pd.read_csv("malesf.csv", encoding='utf-8-sig'))
     females_df = prepare_dataframe(pd.read_csv("fdata.csv", encoding='utf-8-sig'))
     return males_df, females_df
 
 males_df, females_df = load_data()
 
-# ========== USER INPUTS ==========
+# Inputs inside card-style layout
 st.markdown("### 🔧 Search Parameters")
 col1, col2, col3 = st.columns([2, 1, 1])
 
@@ -406,7 +434,7 @@ with col2:
 with col3:
     threshold = st.slider("Match Threshold %", min_value=0, max_value=100, value=60)
 
-# ========== SEARCH LOGIC ==========
+# Search Logic (same as before)
 if user_name:
     if gender == "Male":
         results_df = search_database(user_name, males_df.copy(), min_score=threshold, allow_fallback=False)
@@ -419,20 +447,18 @@ if user_name:
         results_df = results_df.drop_duplicates(subset=['person_id'])
         results_df = results_df.sort_values(by='match_score', ascending=False).head(5)
 
-    # ========== DISPLAY RESULTS ==========
     st.markdown("### 📊 Top Matches")
     if not results_df.empty:
         st.dataframe(
             results_df.style.background_gradient(cmap="Blues").set_properties(**{
                 'border-radius': '10px',
-                'border': '1px solid #ddd',
+                'border': '1px solid #333',
                 'padding': '5px'
             }),
             use_container_width=True
         )
     else:
         st.warning("⚠️ No matches found. Try lowering the threshold or check spelling.")
-
 
 
 

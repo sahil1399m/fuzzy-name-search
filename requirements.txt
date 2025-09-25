@@ -1,5 +1,6 @@
 streamlit
 pandas
 rapidfuzz
-unidecode
 indic-transliteration
+unidecode
+matplotlib

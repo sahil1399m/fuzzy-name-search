@@ -314,9 +314,11 @@ def search_database(user_input, df, min_score=60, top_n=3, allow_fallback=False)
     return matches
 
 
-# ------------------- STREAMLIT PRO UI (Fixed Dark Mode) -------------------
+# ------------------- STREAMLIT PRO UI (Fixed & Enhanced) -------------------
 import streamlit as st
 import pandas as pd
+from rapidfuzz import fuzz, process
+import unidecode
 
 st.set_page_config(
     page_title="Fuzzy Name Search | Police Database",
@@ -337,7 +339,7 @@ if mode == "Dark":
             color: #e6e6e6;
         }
 
-        /* Labels, radio, slider text */
+        /* Labels, text */
         label, .stRadio, .stSlider, .stSelectbox, .stTextInput label, .stTextArea label {
             color: #f5f5f5 !important;
             font-weight: 500;
@@ -391,11 +393,53 @@ if mode == "Dark":
         """, unsafe_allow_html=True
     )
 else:
-    # Light mode unchanged
+    # Light Theme with blue accent
     st.markdown(
         """
         <style>
-        .stApp {background: linear-gradient(135deg, #fdfbfb, #ebedee);}
+        .stApp {
+            background: linear-gradient(135deg, #fdfbfb, #ebedee);
+            color:#24292f;
+        }
+
+        label, .stRadio, .stSlider, .stSelectbox, .stTextInput label, .stTextArea label {
+            color:#24292f !important;
+            font-weight:500;
+        }
+
+        .stTextInput>div>div>input, .stTextArea textarea {
+            background-color:#ffffff;
+            color:#000000;
+            border:1px solid #d0d7de;
+            border-radius:10px;
+            padding:8px;
+        }
+
+        .stRadio>div {
+            background: #eaf2fb;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .stButton>button {
+            background: linear-gradient(45deg, #0366d6, #005cc5);
+            color:white;
+            border:none;
+            border-radius:10px;
+            padding:10px 20px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+        .stButton>button:hover {
+            transform: scale(1.05);
+            box-shadow:0 0 10px #0366d6;
+        }
+
+        .stDataFrame {
+            border:1px solid #d0d7de;
+            border-radius:12px;
+            padding:10px;
+        }
         </style>
         """, unsafe_allow_html=True
     )
@@ -414,7 +458,28 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Dummy Data Loading Example
+# ------------------- HELPER FUNCTIONS -------------------
+def prepare_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Ensure required preprocessing (normalize names)."""
+    df["name_normalized"] = df["name_english"].astype(str).apply(lambda x: unidecode.unidecode(x).lower())
+    return df
+
+def search_database(query, df, min_score=60, top_n=5, allow_fallback=True):
+    """Perform fuzzy matching on dataframe."""
+    query_norm = unidecode.unidecode(query).lower()
+    choices = df["name_normalized"].tolist()
+
+    results = process.extract(query_norm, choices, scorer=fuzz.WRatio, limit=top_n*2)
+    matches = []
+    for match, score, idx in results:
+        if score >= min_score:
+            row = df.iloc[idx].to_dict()
+            row["match_score"] = score
+            matches.append(row)
+
+    return pd.DataFrame(matches).head(top_n)
+
+# ------------------- LOAD DATA -------------------
 @st.cache_data
 def load_data():
     males_df = prepare_dataframe(pd.read_csv("malesf.csv", encoding='utf-8-sig'))
@@ -423,7 +488,7 @@ def load_data():
 
 males_df, females_df = load_data()
 
-# Inputs inside card-style layout
+# ------------------- INPUTS -------------------
 st.markdown("### 🔧 Search Parameters")
 col1, col2, col3 = st.columns([2, 1, 1])
 
@@ -434,7 +499,7 @@ with col2:
 with col3:
     threshold = st.slider("Match Threshold %", min_value=0, max_value=100, value=60)
 
-# Search Logic (same as before)
+# ------------------- SEARCH LOGIC -------------------
 if user_name:
     if gender == "Male":
         results_df = search_database(user_name, males_df.copy(), min_score=threshold, allow_fallback=False)
@@ -449,16 +514,11 @@ if user_name:
 
     st.markdown("### 📊 Top Matches")
     if not results_df.empty:
-        st.dataframe(
-            results_df.style.background_gradient(cmap="Blues").set_properties(**{
-                'border-radius': '10px',
-                'border': '1px solid #333',
-                'padding': '5px'
-            }),
-            use_container_width=True
-        )
+        # ✅ Safe DataFrame display (no matplotlib needed)
+        st.dataframe(results_df, use_container_width=True)
     else:
         st.warning("⚠️ No matches found. Try lowering the threshold or check spelling.")
+
 
 
 

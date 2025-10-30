@@ -1,13 +1,14 @@
 import streamlit as st
 
-# Corrected function call: "theme.base" returns a string like "light" or "dark"
+# The st.get_option is correctly retrieving the base theme ("light" or "dark")
 theme = st.get_option("theme.base")
 
 if theme == "dark":
     st.markdown("""
-    <style>
-    /* Custom button styling for dark theme */
+    <style>  
+    /* --- DARK THEME STYLES --- */
     .stButton > button {
+        /* Added the full button style back */
         background: linear-gradient(45deg, #6a11cb, #2575fc);
         color: white;
         border: none;
@@ -23,9 +24,8 @@ if theme == "dark":
         box-shadow: 0 0 10px #2575fc;
     }
 
-    /* Optional: customize slider knob (a common 'CSS hack' selector) */
-    /* Target the thumb of the slider, which often receives the internal class for the knob */
-    .stSlider .st-bd { /* This targets the internal knob element. The class may change. */
+    /* Slider knob selector - use this with caution as it's an internal class */
+    .stSlider .st-bd {
         background-color: #6a11cb !important;
     }
     </style>
@@ -33,9 +33,10 @@ if theme == "dark":
 
 else:
     st.markdown("""
-    <style>
-    /* Custom button styling for light theme */
+    <style>  
+    /* --- LIGHT THEME STYLES --- */
     .stButton > button {
+        /* Added the full button style back */
         background: linear-gradient(45deg, #0366d6, #005cc5);
         color: white;
         border: none;
@@ -51,14 +52,14 @@ else:
         box-shadow: 0 0 10px #0366d6;
     }
 
-    /* Optional: customize slider knob (a common 'CSS hack' selector) */
+    /* Slider knob selector - use this with caution as it's an internal class */
     .stSlider .st-bd { 
         background-color: #0366d6 !important;
     }
     </style>
     """, unsafe_allow_html=True)
 
-# Example usage of the styled elements (add these to see the styles applied)
-st.title("Streamlit UI Demo")
-st.button("Styled Button")
-st.slider("Styled Slider", 0, 100, 50)
+# Add some widgets so you can test the applied styles
+st.header("Styled Components Demo")
+st.button("Click Me to See Gradient")
+st.slider("Drag Me to See Custom Knob", 0, 100, 50)

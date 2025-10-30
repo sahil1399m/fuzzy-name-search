@@ -5,14 +5,6 @@ theme = st.get_option("theme.base")  # "light" or "dark"
 if theme == "dark":
     st.markdown("""
     <style>
-    .stTextInput>div>div>input {
-        background-color: #1e1e1e;
-        color: #f5f5f5;
-        border: 1px solid #444;
-        border-radius: 10px;
-        padding: 8px;
-    }
-
     .stButton>button {
         background: linear-gradient(45deg, #6a11cb, #2575fc);
         color: white;
@@ -39,14 +31,6 @@ if theme == "dark":
 else:
     st.markdown("""
     <style>
-    .stTextInput>div>div>input {
-        background-color: #fff;
-        color: #24292f;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 8px;
-    }
-
     .stButton>button {
         background: linear-gradient(45deg, #0366d6, #005cc5);
         color: white;

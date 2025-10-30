@@ -17,7 +17,7 @@ st.set_page_config(page_title="Fuzzy Name Search | Police Database", layout="wid
 
 # ========== LOAD CSS ==========
 def load_css(theme="light"):
-    with open("styles.css") as f:
+    with open("style.css") as f:
         css = f"<style>[data-theme='{theme}'] {{}}</style>" + f"<style>{f.read()}</style>"
         st.markdown(css, unsafe_allow_html=True)
 
@@ -65,5 +65,6 @@ if user_name:
         st.dataframe(results_df, use_container_width=True)
     else:
         st.warning("⚠️ No matches found.")
+
 
 

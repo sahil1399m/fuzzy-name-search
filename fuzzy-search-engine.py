@@ -54,53 +54,46 @@ def search_database(query, df, min_score=60, top_n=5, allow_fallback=True):
 
 st.set_page_config(page_title="Fuzzy Search App", layout="wide")
 
-# Apply CSS for dark/light themes
-theme = st.get_option("theme.base")  # "light" or "dark"
+st.markdown("""
+<style>
+/* Common button styles */
+.stButton>button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
 
-if theme == "dark":
-    st.markdown("""
-    <style>
-    .stButton>button {
-        background: linear-gradient(45deg, #6a11cb, #2575fc);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 10px 20px;
-        font-weight: bold;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-    .stButton>button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px #2575fc;
-    }
-    .stSlider>div>div>div>div {
-        background-color: #6a11cb !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-else:
-    st.markdown("""
-    <style>
-    .stButton>button {
-        background: linear-gradient(45deg, #0366d6, #005cc5);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 10px 20px;
-        font-weight: bold;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-    .stButton>button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px #0366d6;
-    }
-    .stSlider>div>div>div>div {
-        background-color: #0366d6 !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+/* Dark theme */
+[data-theme='dark'] .stButton>button {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+}
+[data-theme='dark'] .stButton>button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #2575fc;
+}
+[data-theme='dark'] .stSlider>div>div>div>div {
+    background-color: #6a11cb !important;
+}
+
+/* Light theme */
+[data-theme='light'] .stButton>button {
+    background: linear-gradient(45deg, #0366d6, #005cc5);
+    color: white;
+}
+[data-theme='light'] .stButton>button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #0366d6;
+}
+[data-theme='light'] .stSlider>div>div>div>div {
+    background-color: #0366d6 !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # ------------------- Main App -------------------
 

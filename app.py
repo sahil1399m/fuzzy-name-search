@@ -1,7 +1,17 @@
 # app.py
 import streamlit as st
 import pandas as pd
-from fuzzy_engine import prepare_dataframe, search_database
+import importlib.util, sys, os
+
+# Dynamically load the file fuzzy-search-engine.py
+spec = importlib.util.spec_from_file_location("fuzzy_search_engine", os.path.join(os.path.dirname(__file__), "fuzzy-search-engine.py"))
+fuzzy_search_engine = importlib.util.module_from_spec(spec)
+sys.modules["fuzzy_search_engine"] = fuzzy_search_engine
+spec.loader.exec_module(fuzzy_search_engine)
+
+prepare_dataframe = fuzzy_search_engine.prepare_dataframe
+search_database = fuzzy_search_engine.search_database
+
 
 st.set_page_config(page_title="Fuzzy Name Search | Police Database", layout="wide")
 
@@ -55,4 +65,5 @@ if user_name:
         st.dataframe(results_df, use_container_width=True)
     else:
         st.warning("⚠️ No matches found.")
+
 

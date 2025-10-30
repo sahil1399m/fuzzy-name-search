@@ -1,65 +1,111 @@
 import streamlit as st
 
-# The st.get_option is correctly retrieving the base theme ("light" or "dark")
-theme = st.get_option("theme.base")
+
+
+theme = st.get_option("theme.base") # "light" or "dark"
+
+
 
 if theme == "dark":
-    st.markdown("""
-    <style>  
-    /* --- DARK THEME STYLES --- */
-    .stButton > button {
-        /* Added the full button style back */
-        background: linear-gradient(45deg, #6a11cb, #2575fc);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 10px 20px;
-        font-weight: bold;
-        transition: 0.3s;
-        cursor: pointer;
-    }
 
-    .stButton > button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px #2575fc;
-    }
+st.markdown("""
 
-    /* Slider knob selector - use this with caution as it's an internal class */
-    .stSlider .st-bd {
-        background-color: #6a11cb !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+<style>
+
+.stButton>button {
+
+background: linear-gradient(45deg, #6a11cb, #2575fc);
+
+color: white;
+
+border: none;
+
+border-radius: 10px;
+
+padding: 10px 20px;
+
+font-weight: bold;
+
+transition: 0.3s;
+
+cursor: pointer;
+
+}
+
+
+
+.stButton>button:hover {
+
+transform: scale(1.05);
+
+box-shadow: 0 0 10px #2575fc;
+
+}
+
+
+
+/* Optional: customize slider knob */
+
+.stSlider>div>div>div>div {
+
+background-color: #6a11cb !important;
+
+}
+
+</style>
+
+""", unsafe_allow_html=True)
+
+
 
 else:
-    st.markdown("""
-    <style>  
-    /* --- LIGHT THEME STYLES --- */
-    .stButton > button {
-        /* Added the full button style back */
-        background: linear-gradient(45deg, #0366d6, #005cc5);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 10px 20px;
-        font-weight: bold;
-        transition: 0.3s;
-        cursor: pointer;
-    }
 
-    .stButton > button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 10px #0366d6;
-    }
+st.markdown("""
 
-    /* Slider knob selector - use this with caution as it's an internal class */
-    .stSlider .st-bd { 
-        background-color: #0366d6 !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+<style>
 
-# Add some widgets so you can test the applied styles
-st.header("Styled Components Demo")
-st.button("Click Me to See Gradient")
-st.slider("Drag Me to See Custom Knob", 0, 100, 50)
+.stButton>button {
+
+background: linear-gradient(45deg, #0366d6, #005cc5);
+
+color: white;
+
+border: none;
+
+border-radius: 10px;
+
+padding: 10px 20px;
+
+font-weight: bold;
+
+transition: 0.3s;
+
+cursor: pointer;
+
+}
+
+
+
+.stButton>button:hover {
+
+transform: scale(1.05);
+
+box-shadow: 0 0 10px #0366d6;
+
+}
+
+
+
+/* Optional: customize slider knob */
+
+.stSlider>div>div>div>div {
+
+background-color: #0366d6 !important;
+
+}
+
+</style>
+
+""", unsafe_allow_html=True)
+
+fix this streamlit UI code

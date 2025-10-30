@@ -9,7 +9,6 @@ from indic_transliteration.sanscript import transliterate
 
 # ------------------- Fuzzy Engine Functions -------------------
 
-# 1️⃣ Script detection & normalization
 def is_devanagari(text):
     return bool(re.search(r'[\u0900-\u097F]', str(text)))
 
@@ -23,20 +22,17 @@ def normalize_name(name):
     name = re.sub(r'\s+', ' ', name).strip()
     return name
 
-# 2️⃣ Transliteration helper
 def transliterate_name_to_devanagari(name):
     try:
         return transliterate(name, sanscript.ITRANS, sanscript.DEVANAGARI)
     except Exception:
         return ""
 
-# 3️⃣ Prepare DataFrame
 def prepare_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df["name_normalized"] = df["name_english"].astype(str).apply(lambda x: unidecode.unidecode(x).lower())
     return df
 
-# 4️⃣ Fuzzy Search
-def search_database(query, df, min_score=60, top_n=5, allow_fallback=True):
+def search_database(query, df, min_score=60, top_n=5):
     query_norm = unidecode.unidecode(query).lower()
     choices = df["name_normalized"].tolist()
 
@@ -94,10 +90,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
 # ------------------- Main App -------------------
 
-st.title("Fuzzy Name Search")
+st.title("Fuzzy Name Search - Predefined Data")
 
 # Example dataset
 data = {
@@ -106,15 +101,13 @@ data = {
 df = pd.DataFrame(data)
 df = prepare_dataframe(df)
 
-query = st.text_input("Enter name to search:")
+# Predefined query for demonstration
+query = "Pooja"
 
-if st.button("Search"):
-    if query.strip() == "":
-        st.warning("Please enter a name!")
-    else:
-        results = search_database(query, df)
-        if results.empty:
-            st.info("No matches found.")
-        else:
-            st.dataframe(results)
+results = search_database(query, df)
 
+st.markdown(f"### Top Matches for '{query}':")
+if results.empty:
+    st.info("No matches found.")
+else:
+    st.dataframe(results)

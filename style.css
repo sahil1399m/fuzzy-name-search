@@ -1,1 +1,57 @@
+/* ========== Dark Theme ========== */
+[data-theme="dark"] .stApp {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #121212);
+    color: #e6e6e6;
+}
+
+[data-theme="dark"] label, 
+[data-theme="dark"] .stRadio, 
+[data-theme="dark"] .stSlider {
+    color: #f5f5f5 !important;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .stTextInput>div>div>input {
+    background-color:#1e1e1e;
+    color:#f5f5f5;
+    border:1px solid #444;
+    border-radius:10px;
+    padding:8px;
+}
+
+[data-theme="dark"] .stButton>button {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:10px 20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+[data-theme="dark"] .stButton>button:hover {
+    transform: scale(1.05);
+    box-shadow:0 0 10px #2575fc;
+}
+
+/* ========== Light Theme ========== */
+[data-theme="light"] .stApp {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    color:#24292f;
+}
+
+[data-theme="light"] .stButton>button {
+    background: linear-gradient(45deg, #0366d6, #005cc5);
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:10px 20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+[data-theme="light"] .stButton>button:hover {
+    transform: scale(1.05);
+    box-shadow:0 0 10px #0366d6;
+}
 

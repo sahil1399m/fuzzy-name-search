@@ -90,24 +90,24 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ------------------- Main App -------------------
+# # ------------------- Main App -------------------
 
-st.title("Fuzzy Name Search - Predefined Data")
+# st.title("Fuzzy Name Search - Predefined Data")
 
-# Example dataset
-data = {
-    "name_english": ["Sahil Desai", "Rahul Sharma", "Anjali Mehta", "Priya Singh", "Rohan Kapoor"]
-}
-df = pd.DataFrame(data)
-df = prepare_dataframe(df)
+# # Example dataset
+# data = {
+#     "name_english": ["Sahil Desai", "Rahul Sharma", "Anjali Mehta", "Priya Singh", "Rohan Kapoor"]
+# }
+# df = pd.DataFrame(data)
+# df = prepare_dataframe(df)
 
-# Predefined query for demonstration
-query = "Pooja"
+# # Predefined query for demonstration
+# query = "Pooja"
 
-results = search_database(query, df)
+# results = search_database(query, df)
 
-st.markdown(f"### Top Matches for '{query}':")
-if results.empty:
-    st.info("No matches found.")
-else:
-    st.dataframe(results)
+# st.markdown(f"### Top Matches for '{query}':")
+# if results.empty:
+#     st.info("No matches found.")
+# else:
+#     st.dataframe(results)

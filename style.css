@@ -5,11 +5,6 @@ theme = st.get_option("theme.base")  # "light" or "dark"
 if theme == "dark":
     st.markdown("""
     <style>
-    label, .stRadio, .stSlider {
-        color: #f5f5f5 !important;
-        font-weight: 500;
-    }
-
     .stTextInput>div>div>input {
         background-color:#1e1e1e;
         color:#f5f5f5;
@@ -39,11 +34,6 @@ if theme == "dark":
 else:
     st.markdown("""
     <style>
-    label, .stRadio, .stSlider {
-        color: #24292f;
-        font-weight: 500;
-    }
-
     .stTextInput>div>div>input {
         background-color:#fff;
         color:#24292f;

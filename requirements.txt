@@ -4,3 +4,5 @@ rapidfuzz
 indic-transliteration
 unidecode
 matplotlib
+
+

@@ -5,7 +5,8 @@
 --text-color-light: #e6e6e6; / Light text /
 --card-bg-light: rgba(48, 48, 68, 0.85); / Translucent dark cards /
 --accent-color-light: #9b59b6; / Bright purple accent /
---shadow-color-light: rgba(155, 89, 182, 0.5); / Shadow color for depth */
+--shadow-color-light: rgba(155, 89, 182, 0.5); / Shadow color for depth /
+--threshold-color: #ff4757; / Bright red for the threshold */
 --transition-duration: 0.3s; /* Transition speed */
 }
 /* Basic styling for html and body /
@@ -82,10 +83,22 @@ transform: translate(-50%, -50%) scale(1); /* Wave effect */
 position: relative; /* Position content above pseudo-element /
 z-index: 1; / Ensure text is above wave */
 }
-/* Slider background styling */
+/* Slider background styling /
 .stSlider > div > div > div > div {
+position: relative; / Allow positioning of threshold indicator */
 background: linear-gradient(90deg, var(--accent-color-light), #8e44ad) !important;
 box-shadow: 0 0 10px var(--shadow-color-light);
+}
+/* Threshold indicator styling /
+.stSlider > div > div > div > div::after {
+content: '';
+position: absolute;
+top: 0;
+left: 50%; / Position the threshold in the middle /
+width: 2px; / Thickness of the threshold /
+height: 100%; / Full height of the slider /
+background-color: var(--threshold-color); / Bright red color /
+z-index: 2; / Ensure the threshold is above slider */
 }
 /* Radio group label styling */
 div[role="radiogroup"] label {

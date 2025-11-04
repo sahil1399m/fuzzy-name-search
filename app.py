@@ -16,10 +16,21 @@ search_database = fuzzy_search_engine.search_database
 st.set_page_config(page_title="Fuzzy Name Search | Police Database", layout="wide")
 
 # ========== LOAD CSS ==========
+# ========== LOAD CSS (Improved UI) ==========
 def load_css(theme="light"):
+    # Load Google Font
+    st.markdown("""
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    """, unsafe_allow_html=True)
+
+    # Load custom CSS file
     with open("style.css") as f:
-        css = f"<style>[data-theme='{theme}'] {{}}</style>" + f"<style>{f.read()}</style>"
-        st.markdown(css, unsafe_allow_html=True)
+        css = f.read()
+        st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
+    # Add theme class to body (light or dark)
+    st.markdown(f"<script>document.body.classList.add('{theme}');</script>", unsafe_allow_html=True)
+
 
 # ========== SIDEBAR THEME ==========
 theme = st.sidebar.radio("🌗 Theme Mode", ["light", "dark"]).lower()
@@ -65,6 +76,7 @@ if user_name:
         st.dataframe(results_df, use_container_width=True)
     else:
         st.warning("⚠️ No matches found.")
+
 
 
 

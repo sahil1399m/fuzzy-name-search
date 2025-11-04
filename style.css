@@ -1,149 +1,127 @@
-/* ==========================
-   Global Styling + Font
-========================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --bg-color-light: #f6f8fa;
+    --text-color-light: #0d1117;
+    --card-bg-light: rgba(255, 255, 255, 0.75);
+    --accent-color-light: #0366d6;
+    --shadow-color-light: rgba(3, 102, 214, 0.3);
+
+    --bg-color-dark: #0d1117;
+    --text-color-dark: #c9d1d9;
+    --card-bg-dark: rgba(33, 33, 33, 0.6);
+    --accent-color-dark: #6a11cb;
+    --shadow-color-dark: rgba(106, 17, 203, 0.4);
+
+    --transition-duration: 0.3s;
+}
 
 html, body, [class*="stApp"] {
     font-family: 'Poppins', sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: all 0.3s ease-in-out;
-}
-
-/* ==========================
-   Theme Variables
-========================== */
-[data-theme="light"] {
-    --bg-color: #f6f8fa;
-    --text-color: #0d1117;
-    --card-bg: rgba(255, 255, 255, 0.75);
-    --accent-color: #0366d6;
-    --shadow-color: rgba(3, 102, 214, 0.3);
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: all var(--transition-duration) ease-in-out;
 }
 
 [data-theme="dark"] {
-    --bg-color: #0d1117;
-    --text-color: #c9d1d9;
-    --card-bg: rgba(33, 33, 33, 0.6);
-    --accent-color: #6a11cb;
-    --shadow-color: rgba(106, 17, 203, 0.4);
+    --bg-color-light: var(--bg-color-dark);
+    --text-color-light: var(--text-color-dark);
+    --card-bg-light: var(--card-bg-dark);
+    --accent-color-light: var(--accent-color-dark);
+    --shadow-color-light: var(--shadow-color-dark);
 }
 
-/* ==========================
-   Header Styling
-========================== */
 h1 {
     text-align: center !important;
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    background: linear-gradient(90deg, var(--accent-color-light), #2575fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.2rem !important;
     font-weight: 700;
     letter-spacing: 1px;
     padding: 0.5rem 0;
-    text-shadow: 0px 0px 20px rgba(37,117,252,0.2);
+    text-shadow: 0 0 20px rgba(37,117,252,0.2);
 }
 
-/* ==========================
-   Input Styling
-========================== */
 .stTextInput > div > div > input {
-    background: var(--card-bg);
-    color: var(--text-color);
-    border: 1.5px solid var(--accent-color);
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
+    border: 1.5px solid var(--accent-color-light);
     border-radius: 12px;
     padding: 10px 14px;
     font-size: 1rem;
-    transition: 0.3s ease-in-out;
+    transition: var(--transition-duration) ease-in-out;
 }
 
 .stTextInput > div > div > input:focus {
-    box-shadow: 0 0 15px var(--shadow-color);
+    box-shadow: 0 0 15px var(--shadow-color-light);
     outline: none;
 }
 
-/* ==========================
-   Button Styling
-========================== */
 .stButton > button {
-    background: linear-gradient(45deg, var(--accent-color), #00b4d8);
+    background: linear-gradient(45deg, var(--accent-color-light), #00b4d8);
     color: white;
     border: none;
     border-radius: 12px;
     padding: 12px 25px;
     font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0px 5px 15px var(--shadow-color);
+    transition: all var(--transition-duration) ease;
+    box-shadow: 0 5px 15px var(--shadow-color-light);
 }
 
 .stButton > button:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0px 10px 25px var(--shadow-color);
+    box-shadow: 0 10px 25px var(--shadow-color-light);
 }
 
-/* ==========================
-   Slider Styling
-========================== */
 .stSlider > div > div > div > div {
-    background: linear-gradient(90deg, var(--accent-color), #00b4d8) !important;
-    box-shadow: 0px 0px 10px var(--shadow-color);
+    background: linear-gradient(90deg, var(--accent-color-light), #00b4d8) !important;
+    box-shadow: 0 0 10px var(--shadow-color-light);
 }
 
-/* ==========================
-   Radio Button Styling
-========================== */
 div[role="radiogroup"] label {
-    background: var(--card-bg);
+    background-color: var(--card-bg-light);
     border-radius: 10px;
     padding: 8px 14px;
     margin: 4px 0;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: all 0.25s ease-in-out;
 }
 
 div[role="radiogroup"] label:hover {
     transform: scale(1.05);
-    background: linear-gradient(45deg, var(--accent-color), #00b4d8);
+    background: linear-gradient(45deg, var(--accent-color-light), #00b4d8);
     color: white !important;
 }
 
-/* ==========================
-   DataFrame Table Styling
-========================== */
 .dataframe {
     border-radius: 12px;
     overflow: hidden;
-    background: var(--card-bg);
-    box-shadow: 0px 0px 20px var(--shadow-color);
+    background-color: var(--card-bg-light);
+    box-shadow: 0 0 20px var(--shadow-color-light);
 }
 
 .dataframe th {
-    background: linear-gradient(45deg, var(--accent-color), #00b4d8);
+    background: linear-gradient(45deg, var(--accent-color-light), #00b4d8);
     color: white;
     font-weight: 600;
 }
 
 .dataframe td {
-    color: var(--text-color);
+    color: var(--text-color-light);
     padding: 10px 15px;
 }
 
-/* ==========================
-   Sidebar Theme Selector
-========================== */
 [data-testid="stSidebar"] {
-    background: var(--card-bg);
-    box-shadow: 0px 0px 15px var(--shadow-color);
+    background-color: var(--card-bg-light);
+    box-shadow: 0 0 15px var(--shadow-color-light);
 }
 
 [data-testid="stSidebar"] label {
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--text-color-light);
 }
 
-/* ==========================
-   Smooth Glow Animation
-========================== */
 .glow {
-    text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color-light), 0 0 20px var(--accent-color-light);
 }

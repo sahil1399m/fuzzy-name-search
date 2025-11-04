@@ -1,1 +1,138 @@
+/* ========== Base Setup ========== */
+html, body, [class*="st-"] {
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ======== THEME COLORS ======== */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #f8faff 0%, #e9f1ff 100%);
+    color: #111;
+}
+
+[data-testid="stAppViewContainer"].dark {
+    background: radial-gradient(circle at 10% 20%, #141e30 0%, #243b55 100%);
+    color: #f8f9fa;
+}
+
+/* ======== HEADER ======== */
+h1 {
+    text-align: center !important;
+    color: #ffffff;
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(37, 117, 252, 0.3);
+}
+
+/* ======== INPUTS ======== */
+input[type="text"], textarea, .stTextInput>div>div>input {
+    border-radius: 12px;
+    border: 2px solid #2575fc40;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 15px;
+}
+
+.dark input[type="text"], .dark textarea, .dark .stTextInput>div>div>input {
+    background-color: #2a2a3b;
+    color: #ffffff;
+    border: 2px solid #6a11cb80;
+}
+
+/* ======== RADIO & SELECT ======== */
+.stRadio > label, .stSelectbox > label {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.stRadio div[role="radiogroup"] > label {
+    background-color: #ffffff;
+    color: #333;
+    padding: 8px 14px;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.stRadio div[role="radiogroup"] > label:hover {
+    background-color: #2575fc15;
+}
+
+.dark .stRadio div[role="radiogroup"] > label {
+    background-color: #2d2d44;
+    color: #ddd;
+}
+
+.dark .stRadio div[role="radiogroup"] > label:hover {
+    background-color: #6a11cb25;
+}
+
+/* ======== SLIDER ======== */
+[data-testid="stSlider"] > div {
+    color: #2575fc;
+}
+
+.stSlider [role="slider"] {
+    background-color: #2575fc !important;
+    box-shadow: 0 0 10px rgba(37,117,252,0.5);
+}
+
+/* ======== BUTTON ======== */
+.stButton>button {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 10px 25px;
+    border: none;
+    box-shadow: 0 0 10px rgba(37,117,252,0.3);
+    transition: all 0.3s ease;
+}
+
+.stButton>button:hover {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    transform: scale(1.05);
+}
+
+/* ======== TABLE / DATAFRAME ======== */
+[data-testid="stDataFrame"] table {
+    border-radius: 12px;
+    border-collapse: collapse;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+[data-testid="stDataFrame"] thead {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    color: #fff;
+}
+
+[data-testid="stDataFrame"] tbody tr:nth-child(even) {
+    background-color: #f2f6ff;
+}
+
+.dark [data-testid="stDataFrame"] tbody tr:nth-child(even) {
+    background-color: #1f2430;
+}
+
+[data-testid="stDataFrame"] tbody tr:hover {
+    background-color: #e4ebff;
+    transform: scale(1.002);
+    transition: 0.2s;
+}
+
+/* ======== SCROLLBAR ======== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2575fc, #6a11cb);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
 

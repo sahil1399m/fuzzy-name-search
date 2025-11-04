@@ -33,7 +33,10 @@ def load_css(theme="light"):
 
 
 # ========== SIDEBAR THEME ==========
+import streamlit.components.v1 as components
+
 theme = st.sidebar.radio("🌗 Theme Mode", ["light", "dark"]).lower()
+st.markdown(f"<script>document.body.setAttribute('data-theme', '{theme}');</script>", unsafe_allow_html=True)
 load_css(theme)
 
 # ========== HEADER ==========
@@ -76,6 +79,7 @@ if user_name:
         st.dataframe(results_df, use_container_width=True)
     else:
         st.warning("⚠️ No matches found.")
+
 
 
 

@@ -41,7 +41,7 @@ load_css(theme)
 
 # ========== HEADER ==========
 st.markdown(
-    "<h1 style='text-align:center; color:#2575fc;'>🔍 Gender-Aware Police Fuzzy Name Search</h1>",
+    "<h1 style='text-align:center; color:#2575fc;'>🔍Fuzzy Name Search Engine</h1>",
     unsafe_allow_html=True
 )
 
@@ -79,6 +79,7 @@ if user_name:
         st.dataframe(results_df, use_container_width=True)
     else:
         st.warning("⚠️ No matches found.")
+
 
 
 
